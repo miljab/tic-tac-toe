@@ -10,7 +10,8 @@
 <body>
     <div class="container">
         <div class="score">
-            <span class="player1-name">Player #1</span>
+            <div class="player"><span class="player1-name current-player">Player #1</span>
+            <button class="edit-name" data-edit-player="1">EDIT</button></div>
             <span class="player1-score">0</span>
         </div>
         <div class="board">
@@ -25,12 +26,27 @@
             <div class="cell" data-index="8"></div>
         </div>
         <div class="score">
-            <span class="player2-name">Player #2</span>
+            <div class="player"><span class="player2-name">Player #2</span>
+            <button class="edit-name" data-edit-player="2">EDIT</button></div>
             <span class="player2-score">0</span>
         </div>
         <div class="button-container">
             <button class="reset-button">RESET</button>
         </div>
     </div>
+
+    <dialog class="winner-dialog">
+        <p class="winner-message"></p>
+        <button class="close-dialog" autofocus>Close</button>
+    </dialog>
+
+    <dialog class="edit-name-dialog">
+        <form class="edit-name-form">
+            <label for="player_name">Name: </label>
+            <input type="text" name="player_name" id="player_name" required>
+            <button type="submit" class="apply-button">Apply</button>
+            <button type="button" class="cancel-button">Cancel</button>
+        </form>
+    </dialog>
 </body>
 </html>

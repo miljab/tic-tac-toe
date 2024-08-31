@@ -9,6 +9,8 @@ body {
     align-items: center;
     height: 100vh;
     justify-content: center;
+    background-color: rgb(51, 51, 51);
+    color: white;
 }
 
 .container {
@@ -18,10 +20,11 @@ body {
 }
 
 .board {
-    border: 1px solid black;
+    border: 1px solid white;
     height: 500px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
 }
 
 .button-container {
@@ -39,8 +42,11 @@ body {
     align-items: center;
 }
 
-.player1-name, .player2-name {
+.player {
     font-size: 40px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .player1-score, .player2-score {
@@ -48,5 +54,32 @@ body {
 }
 
 .cell {
-    border: 1px solid black;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+}
+
+dialog {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    padding: 20px;
+}
+
+dialog::backdrop {
+    background-color: rgba(63, 63, 63, 0.7);
+}
+
+.current-player {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
 }
